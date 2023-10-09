@@ -7,6 +7,8 @@ I want to emphasize that there is absolutely nothing wrong with Rust; in fact, i
 
 Once again, I'd like to acknowledge the skill and excellence of the lsd-rs creator and their exceptional program.
 
+I would also like to express this is a work in progress. So there maybe bugs and fetures missing. I will fix and add over time.
+
 ## Features
 
 - List files and directories in a given directory.
