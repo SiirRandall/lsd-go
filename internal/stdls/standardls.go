@@ -1,4 +1,4 @@
-package starndardls
+package stdls
 
 import (
 	"fmt"

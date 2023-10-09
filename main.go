@@ -1,11 +1,11 @@
 package main
 
 import (
-	"flag"
+	flag "github.com/spf13/pflag"
 
 	"github.com/SiirRandall/lsd-go/internal/config"
 	"github.com/SiirRandall/lsd-go/internal/list"
-	"github.com/SiirRandall/lsd-go/internal/starndardls"
+	"github.com/SiirRandall/lsd-go/internal/stdls"
 	"github.com/SiirRandall/lsd-go/internal/tree"
 )
 
@@ -14,10 +14,10 @@ var (
 	noColor          = flag.Bool("no-color", false, "Disable colored output")
 	showInodes       = flag.Bool("inodes", false, "Show inodes")
 	headers          = flag.Bool("headers", false, "Show headers")
-	listDetails      = flag.Bool("l", false, "List")
+	listDetails      = flag.BoolP("list", "l", false, "List")
 	sortAlphabetical = flag.Bool("alpha", false, "Sort files alphabetically")
 	sortReverse      = flag.Bool("reverse", false, "Sort files in reverse order")
-	dirsFirst        = flag.Bool("dirsfirst", true, "Sort directories first and then files alphabetically")
+	dirsFirst        = flag.Bool("dirsfirst", false, "Sort directories first and then files alphabetically")
 	maxDepth         = flag.Int("depth", 1, "Maximum depth for directory traversal. -1 means no limit.")
 	treeview         = flag.Bool("tree", false, "Show tree view")
 )
@@ -43,6 +43,6 @@ func main() {
 	} else if *treeview {
 		tree.Tree(config)
 	} else {
-		starndardls.StdLS(config)
+		stdls.StdLS(config)
 	}
 }
